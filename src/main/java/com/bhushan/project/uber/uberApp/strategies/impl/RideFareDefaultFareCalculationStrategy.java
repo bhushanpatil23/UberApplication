@@ -1,6 +1,5 @@
 package com.bhushan.project.uber.uberApp.strategies.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bhushan.project.uber.uberApp.dtos.RideRequestDto;
@@ -8,8 +7,7 @@ import com.bhushan.project.uber.uberApp.entities.RideRequest;
 import com.bhushan.project.uber.uberApp.services.DistanceService;
 import com.bhushan.project.uber.uberApp.strategies.RideFareCalculationStrategy;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -20,7 +18,7 @@ public class RideFareDefaultFareCalculationStrategy implements RideFareCalculati
 
 	@Override
 	public double calculateFare(RideRequest rideRequest) {
-		double distance = distanceService.calculateDistance(rideRequest.getPickupLocation(), rideRequest.getPickupLocation());
+		double distance = distanceService.calculateDistance(rideRequest.getPickupLocation(), rideRequest.getDropoffLocation());
 		return distance*RIDE_FARE_MULTIPLIER;
 	}
 

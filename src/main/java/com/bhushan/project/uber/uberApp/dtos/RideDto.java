@@ -7,15 +7,17 @@ import org.locationtech.jts.geom.Point;
 import com.bhushan.project.uber.uberApp.entities.enums.PaymentMethod;
 import com.bhushan.project.uber.uberApp.entities.enums.RideStatus;
 
+import lombok.Data;
 
 
+@Data
 public class RideDto {
 
 	private Long id;
 	
-	private Point pickupLocation;
+	private PointDto pickupLocation;
 	
-	private Point dropoffLocation;
+	private PointDto dropoffLocation;
 	
 	private LocalDateTime createdTime;
 
