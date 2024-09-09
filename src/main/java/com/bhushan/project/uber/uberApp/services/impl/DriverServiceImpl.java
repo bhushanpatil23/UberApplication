@@ -111,9 +111,9 @@ public class DriverServiceImpl implements DriverService{
 		if(!driver.equals(ride.getDriver())) {
 			throw new RuntimeException("Driver cannot start a ride as he has not accepted it earlier");
 		}
-//		if(!ride.getRideStatus().equals(RideStatus.ONGOING)) {
-//			throw new RuntimeException("Ride status is not ONGOING hence cannot be started, status "+ride.getRideStatus());
-//		}
+		if(!ride.getRideStatus().equals(RideStatus.ONGOING)) {
+			throw new RuntimeException("Ride status is not ONGOING hence cannot be started, status "+ride.getRideStatus());
+		}
 		
 		ride.setEndedAt(LocalDateTime.now());
 		
